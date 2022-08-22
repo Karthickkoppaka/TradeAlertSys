@@ -1,0 +1,27 @@
+.links {
+    margin-top: 2rem;
+    ul {
+        .active {
+            border-right: 0.3rem solid #f94144;
+            a {
+                color:#f94144
+            }
+        }
+        li {
+            margin: 1rem;
+            list-style-type: none;
+            a {
+                text-decoration: none;
+                display: flex;
+                gap: 1rem;
+                color: #61dafb;
+            }
+            &:hover{
+                border-right: 0.3rem solid #f94144;
+                a {
+                    color: #f94144;
+                }
+            }
+        }
+    }
+}
