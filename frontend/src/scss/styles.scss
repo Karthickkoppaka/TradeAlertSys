@@ -3,4 +3,17 @@
 @import "./components/sidebar.scss";
 @import "./components/links.scss";
 @import "./components/home.scss";
-@import "./components/fyersStatus.scss"
+@import "./components/fyersStatus.scss";
+@import "./components/refreshstocksymbol.scss";
+
+// Common
+@import "./components/common/dropdown.scss";
+@import "./components/common/navdropdown.scss";
+//StockData
+@import "./components/stockdata/stockListDropDown.scss";
+@import "./components/stockdata/stocksymbolsearch.scss";
+@import "./components/stockdata/stockSymbolSearchBox.scss";
+@import "./components/stockdata/priceinfo/stockltp.scss";
+
+//Strategies
+@import "./components/strategies/straddle/newstraddle/newstraddletable.scss";

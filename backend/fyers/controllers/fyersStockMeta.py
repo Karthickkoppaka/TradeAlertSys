@@ -45,10 +45,12 @@ def GetStockList(request):
     try:
         stockKey = request.GET['StockKey']
         res = fyersStockMetaHandler.GetStockList(stockKey)
+        print(f'GetStockList {type(res)}')
+        print(f'GetStockList {res}')
         response_data = {}
         if not (res is None):
             response_data['status'] = 'success'
-            response_data['data'] = json.loads(res)
+            response_data['data'] = json.loads(res.reset_index().to_json(orient='records'))
             return JsonResponse(response_data, status=status.HTTP_200_OK, safe=False)
         else:
             return JsonResponse({'status':'failure', 'message' :'No Response'},status=status.HTTP_404_NOT_FOUND)

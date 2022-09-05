@@ -1,0 +1,22 @@
+.refreshstocksymbol{
+    display: flex;
+    position: fixed;
+    background-color: #61dafb;
+    border-radius: 2rem;
+    padding: 1rem;
+    color: black;
+    font-weight: bold;
+    gap: 1rem;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    .inactive {
+        height: 2rem;
+        width: 2rem;
+        background-color: #f46444;
+    }
+    .active{
+        height: 2rem;
+        width: 2rem;
+        background-color: white;
+    }
+}

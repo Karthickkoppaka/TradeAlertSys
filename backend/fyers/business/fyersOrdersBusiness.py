@@ -59,7 +59,9 @@ class FyersOrderManagementBusiness():
                 "takeProfit":0
         }
         print(f'MarketOrder {reqdata}')
-        return self.SingleOrder(data=reqdata)
+        res= self.SingleOrder(data=reqdata)
+        print(f'MarketOrder res {res}')
+        return res
 
     def SingleOrder(self, data):
         return fyersSession.fyers_session_model.place_order(data= data)

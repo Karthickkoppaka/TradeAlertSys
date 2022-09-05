@@ -1,7 +1,8 @@
 import React from "react";
+import StockDataHome from "./stockdata/stockdataHome";
 
 export default function StockData(){
     return(
-        <h1>StockData</h1>
+        <StockDataHome/>
     );
 }

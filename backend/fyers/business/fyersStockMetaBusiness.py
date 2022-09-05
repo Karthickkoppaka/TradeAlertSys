@@ -78,4 +78,4 @@ class FyersStockMetaDataHandler():
     def GetStockList(self, stockKey):
         print(stockKey)
         data = FyersStockList.objects.filter(SymbolDetails__icontains =stockKey).values('SymbolDetails','SymbolTicker')
-        return list(data)
+        return pd.DataFrame(list(data))

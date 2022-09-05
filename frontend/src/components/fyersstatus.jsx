@@ -1,21 +1,25 @@
 import React, {useState} from "react";
 import { useEffect } from "react";
 import {FiAlertTriangle, FiCheckCircle} from "react-icons/fi";
-import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function FyersStatus(){
+export default function FyersStatus({handleLoginState}){
     const [loginStatus, setLoginStatus] = useState(false);
     
     useEffect(() => {
         function getData(){
             axios.get('http://127.0.0.1:8000/api/Fyers/Status')
             .then(response => {
+                console.log("FyersStatus Success");
                 setLoginStatus(true);
+                handleLoginState(true);
             })
             .catch(err => {
+                console.log("FyersStatus Fail");
                 setLoginStatus(false);
+                handleLoginState(false);
             });
+            handleLoginState(true);
         }
         getData()
     }, [])

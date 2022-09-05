@@ -8,14 +8,26 @@ class FyersStockDataBusiness():
 
     def GetStockLtp(self, symbolTicker, fromDate, toDate):
         global fyersSession
-        data = {"symbol":symbolTicker,"resolution":"D","date_format":"1","range_from":fromDate,"range_to":toDate,"cont_flag":"1"}
-        retdata= fyersSession.fyers_session_model.history(data)['candles']
+        data = {"symbol":symbolTicker,"resolution":"D","date_format":"1","range_from":fromDate,"range_to":toDate,"cont_flag":"1"}        
+        #print(f'request data {data}')
+        retdata= fyersSession.fyers_session_model.history(data)
+        #print(f'retdata {retdata}')
+        retdata= retdata['candles']
         rdata = pd.DataFrame(retdata, columns=['ETime', 'Open', 'High', 'Low', 'Close', 'Volume'])
         tz = pytz.timezone('Asia/Kolkata')
         rdata['Time'] = rdata['ETime'].apply(lambda x: str(datetime.datetime.fromtimestamp(x)))
         rdata['Symbol'] = symbolTicker
+        rdata = rdata.sort_values(by='ETime', ascending=False).head(1).reset_index()
         print(f'GetStockLtp {rdata}')
         return rdata
+
+    def GetStockListLtp(self, symbolTicker, fromDate, toDate):
+        data = pd.DataFrame(columns=['ETime', 'Open', 'High', 'Low', 'Close', 'Volume'])
+        for symbol in symbolTicker.split(","):
+            res = self.GetStockLtp(symbol, fromDate, toDate).head(1)
+            data = pd.concat([data, res], ignore_index=True)
+        
+        return data.sort_values(by='ETime', ascending=False)
 
     def GetStockQuotes(self, symbolTicker):
         global fyersSession

@@ -56,3 +56,31 @@ class FyersStockDepthTracker(models.Model):
     num_orders = models.IntegerField(blank=True)
     date_added = models.DateTimeField(blank=True, null=True)
 
+class FyersStrategyStraddleTracker(models.Model):
+    strategy_name = models.CharField(max_length=50, blank=True)
+    strategy_id = models.CharField(max_length=50, blank=True)
+    track_symbol = models.CharField(max_length=50, blank=True)
+    track_level = models.CharField(max_length=50, blank=True)
+    track_direction = models.CharField(max_length=50, blank=True) #UP or Down
+    track_ltp = models.FloatField(blank=True)
+    track_ltp_updatedt = models.DateTimeField(blank=True, null=True)
+    istargetreached = models.FloatField(blank=True)
+    target_symbol = models.CharField(max_length=50, blank=True)
+    target_level = models.FloatField(blank=True)
+    quantity = models.IntegerField(blank=True, null=True)
+    date_added = models.DateTimeField(blank=True, null=True)
+
+class FyersStrategyStrangleTracker(models.Model):
+    strategy_name = models.CharField(max_length=50, blank=True)
+    strategy_id = models.CharField(max_length=50, blank=True)
+    track_symbol = models.CharField(max_length=50, blank=True)
+    track_level = models.CharField(max_length=50, blank=True)
+    track_direction = models.CharField(max_length=50, blank=True) #UP or Down
+    track_ltp = models.FloatField(blank=True)
+    track_ltp_updatedt = models.DateTimeField(blank=True, null=True)
+    istargetreached = models.FloatField(blank=True)
+    target_symbol_ce = models.CharField(max_length=50, blank=True)
+    target_symbol_pe = models.CharField(max_length=50, blank=True)
+    quantity = models.IntegerField(blank=True, null=True)
+    target_level = models.FloatField(blank=True)
+    date_added = models.DateTimeField(blank=True, null=True)

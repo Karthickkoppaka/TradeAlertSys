@@ -8,7 +8,7 @@ export default function Links({links}){
                 links.map(
                     (link) => {
                         return (
-                            <li className={link.active ? "active" : ""}>
+                            <li key={link.text} className={link.active ? "active" : ""}>
                                 <Link to={link.to}> 
                                     <link.icon/>
                                     {link.text}

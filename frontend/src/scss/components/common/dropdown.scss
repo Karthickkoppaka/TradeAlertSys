@@ -1,0 +1,23 @@
+.commonDropdown{
+    background-color: #61dafb;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 20rem;
+    height: 3rem;
+    margin: 1rem;
+    padding-left: 1rem;
+    align-items: center;
+    border-radius: 2rem;
+    select{
+        border: none;
+        border-bottom: #f94144 solid 1px;
+        border-radius: 1rem;
+        height: 2rem;
+        width: max-content;
+        font-style: oblique;
+        padding-left: 1rem;
+    }
+}

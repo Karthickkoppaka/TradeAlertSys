@@ -1,0 +1,23 @@
+.newstraddletable{
+    .element:hover{
+        display: block;
+    }
+    .element{
+        display: none;
+    }
+    :hover > * {
+        display: block;
+    }
+
+    // #btnControl {
+    //     display: none;
+    // }
+    
+    // #btnControl > label {
+    //     display: none;
+    // }
+
+    // #btnControl:checked + label > div {
+    //     display: block;
+    // }
+}

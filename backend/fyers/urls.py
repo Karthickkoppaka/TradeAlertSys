@@ -18,6 +18,7 @@ urlpatterns = [
     path('Stock/StockList', fyersStockMeta.GetStockList),
     #StockData
     path('StockData/Ltp', fyersStockDataHandler.GetStockLtp),
+    path('StockData/List/Ltp', fyersStockDataHandler.GetStockListLtp),
     path('StockData/Quotes', fyersStockDataHandler.GetStockQuotes),
     path('StockData/MarketDepth', fyersStockDataHandler.GetStockMarketDepth),
     #Stream
@@ -29,4 +30,5 @@ urlpatterns = [
     #Strategies
     path('Strategy/Straddle', fyersStrategiesHandler.StraddleOrder),
     path('Strategy/Active', fyersStrategiesHandler.GetActiveStrategies),
+    path('Strategy/Cancel', fyersStrategiesHandler.CancelStrategy),
 ]
