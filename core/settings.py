@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-rw9ulsk^fxd)@o=+4aksd#kctayf$!d9cu*bcs3h&rc%+7#dei
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -138,7 +138,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR / 'frontend')
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
